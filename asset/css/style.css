@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.container_main {
+    height: calc(100vh - 120px);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.col-btn {
+    display: flex;
+    align-items: center;
+}
+
+.col-btn button {
+    padding: 0.3rem 1rem;
+    margin-left: 1rem;
+}
+
+header {
+    height: 70px;
+}
+
+.container_main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+}
+
+.box {
+    border: 1px solid;
+    width: calc(100% / 10);
+    aspect-ratio: 1;
+}
+
+
+
+
+
+/* footer */
+
+footer {
+    height: 50px;
+    background-color: aqua;
+}
