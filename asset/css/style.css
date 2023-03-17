@@ -40,12 +40,23 @@ header {
     margin: auto;
 }
 
-.box {
+.box_facile {
     border: 1px solid;
     width: calc(100% / 10);
     aspect-ratio: 1;
 }
 
+.box_medio {
+    border: 1px solid;
+    width: calc(100% / 9);
+    aspect-ratio: 1;
+}
+
+.box_difficile {
+    border: 1px solid;
+    width: calc(100% / 7);
+    aspect-ratio: 1;
+}
 
 
 

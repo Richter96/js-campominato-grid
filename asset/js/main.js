@@ -22,18 +22,36 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 // recuper elementi del dom nel quale inserire il loop
 const Container_box_el = document.querySelector('.container_main')
 
+
+//prendiamo il form del doom
+const formEl = document.querySelector('form')
+
+// assegnamo al bottone una funzone
+formEl.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+// prendiamo il valore scelto dal select
+const typeDifficultvalue = e.target.change_difficolt.value
+console.log (typeDifficultvalue)
+} )
+
+
+
+
+
+
 const numberBox = 100
-
-
 // makup del codice html
 for (let i = 1; i <= numberBox; i++) {
     console.log([i])
 // creiamo un markup per i box
-    const Box_Markup = `<div class="box"><span>${[i]}</span></div>`
+    const Box_Markup = `<div class="box_facile justify-content-center d-flex  align-items-center"><span>${[i]}</span></div>`
     console.log(Box_Markup)
 // scriviamo il markup nell'dom
     Container_box_el.insertAdjacentHTML('beforeend', Box_Markup)
+
 }
+
 
 
 
