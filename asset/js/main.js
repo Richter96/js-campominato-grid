@@ -22,11 +22,11 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 // recuper elementi del dom nel quale inserire il loop
 const Container_box_el = document.querySelector('.container_main')
 
-const numberBox = 40
+const numberBox = 100
 
 
 // makup del codice html
-for (let i = 0; i < numberBox; i++) {
+for (let i = 1; i <= numberBox; i++) {
     console.log([i])
 // creiamo un markup per i box
     const Box_Markup = `<div class="box"><span>${[i]}</span></div>`
