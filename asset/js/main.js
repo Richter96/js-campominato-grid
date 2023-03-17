@@ -10,18 +10,15 @@ con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 
 con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe; */
 
-// creare un bottone per generare una griglia
 
 
 
-// generare un loop di box
-
-
-// dichiaro una costante x numero di box
 
 // recuper elementi del dom nel quale inserire il loop
 const Container_box_el = document.querySelector('.container_main')
 
+
+//-------------------- creare un bottone per generare una griglia
 
 //prendiamo il form del doom
 const formEl = document.querySelector('form')
@@ -38,18 +35,31 @@ console.log (typeDifficultvalue)
 
 
 
-
-
+// -------------------------generare un loop per la creazione di box
+// dichiaro una costante x numero di box
 const numberBox = 100
 // makup del codice html
 for (let i = 1; i <= numberBox; i++) {
     console.log([i])
 // creiamo un markup per i box
-    const Box_Markup = `<div class="box_facile justify-content-center d-flex  align-items-center"><span>${[i]}</span></div>`
+    const Box_Markup = `<div class="box box_facile justify-content-center d-flex  align-items-center"><span>${[i]}</span></div>`
     console.log(Box_Markup)
 // scriviamo il markup nell'dom
     Container_box_el.insertAdjacentHTML('beforeend', Box_Markup)
+// selezioniamo il singolo box
+}
 
+// andiaom a selezionare le cielle da colorare
+
+// constante per selezionare tutti i box
+const allBox = document.querySelectorAll('.box')
+console.log(allBox)
+
+for (let k = 0; k < allBox.length; k++) {
+    const this_box = allBox[k]
+    this_box.addEventListener('click', function() {
+        this_box.classList.toggle('bg-lightblue')
+    })
 }
 
 
