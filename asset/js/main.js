@@ -15,37 +15,34 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 
 
 // recuper elementi del dom nel quale inserire il loop
-const Container_box_el = document.querySelector('.container_main')
+const ContainerBoxEl = document.querySelector('.container_main')
 
 
 //-------------------- creare un bottone per generare una griglia
 
-//prendiamo il form del doom
-const formEl = document.querySelector('form')
+//recuperiamo il bottone del doom
+const btnPlay = document.querySelector('button.play')
 
 // assegnamo al bottone una funzone
-formEl.addEventListener('submit', function(e) {
-    e.preventDefault()
+btnPlay.addEventListener('click', function() {
+// diaom all'container un reset del contenuto.
+ContainerBoxEl.innerHTML = ('')
 
-// prendiamo il valore scelto dal select
-const typeDifficultvalue = e.target.change_difficolt.value
-console.log (typeDifficultvalue)
-} )
-
-
-
+// prendiamo il valore scelto dal select difficoltà
+const difficoltà = document.querySelector('.change_difficolt').value
+// definiamo il numero di box prendendolo.
+let numberBox = difficoltà
 
 // -------------------------generare un loop per la creazione di box
 // dichiaro una costante x numero di box
-const numberBox = 100
 // makup del codice html
 for (let i = 1; i <= numberBox; i++) {
-    console.log([i])
+    // console.log([i])
 // creiamo un markup per i box
-    const Box_Markup = `<div class="box box_facile justify-content-center d-flex  align-items-center"><span>${[i]}</span></div>`
-    console.log(Box_Markup)
+    const Box_Markup = `<div style="width:calc(100% / ${Math.sqrt(numberBox)} " class="box justify-content-center d-flex  align-items-center"><span>${[i]}</span></div>`
+    // console.log(Box_Markup)
 // scriviamo il markup nell'dom
-    Container_box_el.insertAdjacentHTML('beforeend', Box_Markup)
+    ContainerBoxEl.insertAdjacentHTML('beforeend', Box_Markup)
 // selezioniamo il singolo box
 }
 
@@ -53,14 +50,19 @@ for (let i = 1; i <= numberBox; i++) {
 
 // constante per selezionare tutti i box
 const allBox = document.querySelectorAll('.box')
-console.log(allBox)
-
+// console.log(allBox)
 for (let k = 0; k < allBox.length; k++) {
     const this_box = allBox[k]
     this_box.addEventListener('click', function() {
-        this_box.classList.toggle('bg-lightblue')
+        this_box.classList.add('bg-lightblue')
+        console.log([k + 1])
     })
 }
+} )
+
+
+
+
 
 
 
