@@ -55,7 +55,7 @@ for (let k = 0; k < allBox.length; k++) {
     const this_box = allBox[k]
     this_box.addEventListener('click', function() {
         this_box.classList.add('bg-lightblue')
-        console.log([k + 1])
+        console.log(k + 1)
     })
 }
 } )
